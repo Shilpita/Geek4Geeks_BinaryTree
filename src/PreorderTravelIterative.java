@@ -3,36 +3,32 @@ import java.util.Stack;
 /**************************************************************************
  * author : Shilpita Roy
  * date   : Jan15,2017
- * purpose: Inorder Traversal of binary tree 
+ * purpose: Preorder Traversal of binary tree 
  * 			Geek4Geeks
  * *****************************************************************************/
-public class InorderTravelIterative {
+public class PreorderTravelIterative {
 	private static TreeNode btree;
 	
-	private static void inorder(){
-		if(btree == null ||(btree.left == null && btree.right==null))
-			System.out.println("\n"+btree.data);
-		Stack<TreeNode> s = new Stack<TreeNode>();
-		TreeNode node = btree;
+	private static void preorder(){
+		if(btree == null || (btree.left == null && btree.right == null))
+			System.out.println(btree.data);
 		
-		while(node != null){
-			s.push(node);
-			node = node.left;
-		}
+		TreeNode node ;
+		Stack<TreeNode> s = new Stack<TreeNode>();
+		s.push(btree);
 		
 		while(!s.isEmpty()){
 			node = s.pop();
 			System.out.print(node.data+"\t");
-			if(node.right != null){
-				node = node.right;
-				while(node!= null){
-					s.push(node);
-					node = node.left;
-				}
-			}		
-		}	
+			
+			if(node.right != null)
+				s.push(node.right);
+			if(node.left != null)
+				s.push(node.left);
+			
+		}
+		
 	}
-	
 	public static void main(String[] args) {
 		btree = new TreeNode(4);
 		btree.left = new TreeNode(2);
@@ -41,8 +37,8 @@ public class InorderTravelIterative {
 		btree.left.right = new TreeNode(3);
 		btree.right.left = new TreeNode(5);
 		btree.right.right = new TreeNode(7);
-		
-		inorder();
-		
+
+		preorder();
 	}
+
 }

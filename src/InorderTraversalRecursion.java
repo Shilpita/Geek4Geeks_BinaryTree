@@ -1,7 +1,7 @@
 /******************************************************************************************************
  * Author : Shilpita Roy
  * Date   : Dec16,2016
- * Problem: Given a binary tree traverse it in preorder [root->left child->right child]
+ * Problem: Given a binary tree traverse it in pre-order [root->left child->right child]
  *          GeekForGeeks
  *          
  * The time complexity for the best method is O(N). 
