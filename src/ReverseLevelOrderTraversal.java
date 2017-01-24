@@ -9,7 +9,7 @@ import java.util.Queue;
  * The time complexity for the best method is O(N). 
  * *****************************************************************************************************/
 
-/* Class for travelsal.*/
+
 public class ReverseLevelOrderTraversal {
 	
 	public ReverseLevelOrderTraversal(){}
