@@ -16,7 +16,7 @@ public class ReverseLevelOrderTraversal {
 	/*
 	 * This method uses a Queue to enqueue child of each TreeNode visited. The is level order traversal
 	 * Then each node from the queue is added to the stack.
-	 * Thus when each node is poped from stack its in reverse order of level traversal.
+	 * Thus when each node is popped from stack its in reverse order of level traversal.
 	 */
 	public static void reverseLevelTraversal(TreeNode root){
 		if(root == null) System.out.println("no tree");

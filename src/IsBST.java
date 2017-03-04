@@ -45,21 +45,16 @@ public class IsBST {
 	}
 	
 	/********EFFIECIENT SOLUTION*********/
-	public static boolean isBSTEffiecient(TreeNode node){
-		if(node == null) return true;
-		
-		return isBSTHandler(node, Integer.MIN_VALUE,Integer.MAX_VALUE);
-	}
-	
-	private static boolean isBSTHandler(TreeNode node, int minValue, int maxValue) {
-		if(node == null) return true;
-		if(minValue < node.data && node.data < maxValue){
-			//System.out.println(isBSTHandler(node.left,minValue,node.data)+"   "+ isBSTHandler(node.right,node.data,maxValue));
-			return isBSTHandler(node.left,minValue,node.data) &&
-					isBSTHandler(node.right,node.data,maxValue);
-		}
-		return false;
-	}
+	public static boolean isBSTEffiecient(TreeNode root) {
+        if(root == null || (root.left ==null && root.right == null)) return true;
+        
+        return isValidBSTHandler(root , Long.MIN_VALUE , Long.MAX_VALUE);
+    }
+    public static boolean isValidBSTHandler(TreeNode root, long min, long max){
+        if(root == null) return true;
+        if(min >= root.data || max <= root.data) return false;
+        return isValidBSTHandler(root.left, min , root.data) && isValidBSTHandler(root.right, root.data,max);
+    }
 
 	public static void main(String[] args) {
 		TreeNode btree = new TreeNode(4);

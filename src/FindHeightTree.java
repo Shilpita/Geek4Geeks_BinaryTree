@@ -11,8 +11,11 @@ public class FindHeightTree {
 		if(root == null) return 0;
 		
 		TreeNode node = root;
-		
-		return 1+ (getHeight(node.left) > getHeight(node.right)?getHeight(node.left) : getHeight(node.right));
+
+        int depth_left = getHeight(node.left) +1;
+        int depth_right= getHeight(node.right) +1;
+        
+		return depth_left > depth_right?depth_left : depth_right;
 	}
 	
 	public static void main(String[] args) {
